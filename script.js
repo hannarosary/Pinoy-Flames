@@ -1,11 +1,7 @@
-var yours = document.getElementById("yourName"); //your name
-var partner = document.getElementById("partnerName"); //your partner's/crush's name
-var output = document.getElementById("output"); //output
-
 document.getElementById("btnEnter").addEventListener("click", flames); //clicking the enter button to know the flames of each other
 document.getElementById("btnClear").addEventListener("click", clearFlames); //clicking the clear button to clear both text fields
 
-function flames(){
+function flames(yours, partner, output){
     var listOfFlames = ['None of the Above', 'Friends', 'Love', 'Accept', 'Marriage', 'Enemy', 'Sweet'];
 
     //getting rid of spaces
@@ -74,3 +70,13 @@ function clearFlames(){
     partner.value = "";
     output.value = "";
 }
+
+function main(yours, partner){
+    yours = document.getElementById("yourName"); //your name
+    partner = document.getElementById("partnerName"); //your partner's/crush's name
+    var output = document.getElementById("output"); //output
+    
+    flames(yours, partner, output);
+    clearFlames(yours, partner, output);
+}
+
